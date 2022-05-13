@@ -1,34 +1,36 @@
 import React from 'react';
 
-function PizzaBlock({title, price}) {
-  const [pizzaCount, setPizzaCount] = React.useState(0);
+function PizzaBlock({title, price, imageUrl, sizes, types}) {
+  const typeNames = ['тонкое', 'традиционное'];
+  const [type, setType] = React.useState(0);
+  const [size, setSize] = React.useState(0);
+  // const [pizzaCount, setPizzaCount] = React.useState(0);
 
-  const addToCart = () => {
-    setPizzaCount(pizzaCount + 1);    
-  }
+  // const addToCart = () => {
+  //   setPizzaCount(pizzaCount + 1);    
+  // }
 
     return (
         <div className="pizza-block">
   <img
     className="pizza-block__image"
-    src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+    src={imageUrl}
     alt="Pizza"
   />
   <h4 className="pizza-block__title">{title}</h4>
   <div className="pizza-block__selector">
     <ul>
-      <li className="active">тонкое</li>
-      <li>традиционное</li>
+      {types.map((el, i) => (<li key={i} onClick={() => {setType(el)}} className={type === i && 'active'}>{typeNames[el]}</li>))}
     </ul>
+
     <ul>
-      <li className="active">26 см.</li>
-      <li>30 см.</li>
-      <li>40 см.</li>
+    {sizes.map((el, i) => (<li onClick={() => {setSize(i)}} className={size === i && 'active'} key={i}>{el} см.</li>))}
     </ul>
+
   </div>
   <div className="pizza-block__bottom">
     <div className="pizza-block__price">от {price} ₽</div>
-    <button onClick={addToCart} className="button button--outline button--add">
+    <button className="button button--outline button--add">
       <svg
         width="12"
         height="12"
@@ -42,7 +44,7 @@ function PizzaBlock({title, price}) {
         />
       </svg>
       <span>Добавить</span>
-      <i>{pizzaCount}</i>
+      <i>0</i>
     </button>
   </div>
 </div> 
