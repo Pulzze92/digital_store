@@ -1,5 +1,16 @@
+import React from 'react';
 
 function Sort() {
+    const [category, setCategory] = React.useState('популярности');
+    const [popUp, setPopUp] = React.useState(false);
+
+    let catS = ['популярности', 'цене', 'алфавиту'];
+
+    const catSelect = (item) => {
+      setCategory(item);
+      setPopUp(false);
+    }
+
     return (
       <div className="sort">
                 <div className="sort__label">
@@ -16,15 +27,22 @@ function Sort() {
                     />
                   </svg>
                   <b>Сортировка по:</b>
-                  <span>популярности</span>
+                  <span onClick={() => {setPopUp(!popUp)}}>{category}</span>
                 </div>
-                <div className="sort__popup">
+                {popUp &&
+                <div className={popUp ? "sort__popup" : ''}>
                   <ul>
-                    <li className="active">популярности</li>
-                    <li>цене</li>
-                    <li>алфавиту</li>
+                  {
+                  catS.map((el, i) => {
+                    return <li  onClick={() => catSelect(el)} 
+                                key={i}
+                                className={category === el ? 'active' : ''}
+                                >{el}</li>
+                  })
+                  }
                   </ul>
                 </div>
+              }
               </div>
     );
   }

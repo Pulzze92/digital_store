@@ -4,11 +4,6 @@ function PizzaBlock({title, price, imageUrl, sizes, types}) {
   const typeNames = ['тонкое', 'традиционное'];
   const [type, setType] = React.useState(0);
   const [size, setSize] = React.useState(0);
-  // const [pizzaCount, setPizzaCount] = React.useState(0);
-
-  // const addToCart = () => {
-  //   setPizzaCount(pizzaCount + 1);    
-  // }
 
     return (
         <div className="pizza-block">
@@ -20,11 +15,11 @@ function PizzaBlock({title, price, imageUrl, sizes, types}) {
   <h4 className="pizza-block__title">{title}</h4>
   <div className="pizza-block__selector">
     <ul>
-      {types.map((el, i) => (<li key={i} onClick={() => {setType(el)}} className={type === i && 'active'}>{typeNames[el]}</li>))}
+      {types.map((el, i) => (<li key={i} onClick={() => {setType(el)}} className={type === i ? 'active' : ''}>{typeNames[el]}</li>))}
     </ul>
 
     <ul>
-    {sizes.map((el, i) => (<li onClick={() => {setSize(i)}} className={size === i && 'active'} key={i}>{el} см.</li>))}
+    {sizes.map((el, i) => (<li onClick={() => {setSize(i)}} className={size === i ? 'active' : ''} key={i}>{el} см.</li>))}
     </ul>
 
   </div>
