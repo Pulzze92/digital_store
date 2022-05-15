@@ -1,13 +1,18 @@
 import React from 'react';
 
-function Sort() {
-    const [category, setCategory] = React.useState('популярности');
+function Sort({value, onClickSort}) {
     const [popUp, setPopUp] = React.useState(false);
 
-    let catS = ['популярности', 'цене', 'алфавиту'];
+    let catS = [{name: 'популярности (DESC)', sortProperty: 'rating'},
+                {name: 'популярности (ASC)', sortProperty: '-rating'}, 
+                {name: 'цене (DESC)', sortProperty: 'price'},
+                {name: 'цене (ASC)', sortProperty: '-price'} ,
+                {name: 'алфавиту (DESC)', sortProperty: 'title'},
+                {name: 'алфавиту (ASC)', sortProperty: '-title'}
+              ];    
 
     const catSelect = (item) => {
-      setCategory(item);
+      onClickSort(item);
       setPopUp(false);
     }
 
@@ -27,17 +32,17 @@ function Sort() {
                     />
                   </svg>
                   <b>Сортировка по:</b>
-                  <span onClick={() => {setPopUp(!popUp)}}>{category}</span>
+                  <span onClick={() => {setPopUp(!popUp)}}>{value.name}</span>
                 </div>
                 {popUp &&
                 <div className={popUp ? "sort__popup" : ''}>
                   <ul>
                   {
-                  catS.map((el, i) => {
-                    return <li  onClick={() => catSelect(el)} 
+                  catS.map((obj, i) => {
+                     return <li onClick={() => catSelect(obj)}
                                 key={i}
-                                className={category === el ? 'active' : ''}
-                                >{el}</li>
+                                className={value.sortProperty === obj.sortProperty ? 'active' : ''}
+                                >{obj.name}</li>
                   })
                   }
                   </ul>
