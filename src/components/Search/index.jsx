@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Serach.module.scss';
+import styles from './Search.module.scss';
 import { SearchContext } from '../../App';
 
 const Search = () => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
@@ -6,15 +7,21 @@ import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
 
-export const Home = (searchValue) => {
+import { SearchContext } from '../App';
+
+export const Home = () => {
+  const category = useSelector((state) => state.filter.category);
+  const setCategory = () => {};
+
   const [items, setItems] = React.useState([]);
   let [isLoaded, setIsLoaded] = React.useState(false);
-  const [category, setCategory] = React.useState(0);
-  const [currentPage, setCurrentPage] = React.useState(0);
+  // const [category, setCategory] = React.useState(0);
+  const [currentPage, setCurrentPage] = React.useState(1);
   const [sort, setSort] = React.useState({
     name: 'популярности',
     sortProperty: 'rating',
   });
+  const searchValue = React.useContext(SearchContext);
 
   React.useEffect(() => {
     setIsLoaded(false);

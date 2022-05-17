@@ -2,6 +2,8 @@ import './App.css';
 import './scss/app.scss';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { decrement, increment } from './redux/slices/filterSlice';
 
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -12,6 +14,8 @@ export const SearchContext = React.createContext();
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
+  // const count = useSelector((state) => state.counter.value);
+  // const dispatch = useDispatch();
 
   return (
     <div className="wrapper">
@@ -19,7 +23,7 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route element={<Home searchValue={searchValue} />} path="/" />
+            <Route element={<Home />} path="/" />
             <Route element={<NotFound />} path="*" />
             <Route element={<Cart />} path="/cart" />
           </Routes>

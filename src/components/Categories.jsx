@@ -11,7 +11,7 @@ function Categories({ category, onClickCategory }) {
             <li
               key={i}
               onClick={() => onClickCategory(i)}
-              className={category == i ? 'active' : ''}>
+              className={category === i ? 'active' : ''}>
               {el}
             </li>
           );
