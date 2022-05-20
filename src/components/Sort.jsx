@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort } from '../redux/slices/filterSlice';
 
-let catS = [
+export const catS = [
   { name: 'популярности (DESC)', sortProperty: 'rating' },
   { name: 'популярности (ASC)', sortProperty: '-rating' },
   { name: 'цене (DESC)', sortProperty: 'price' },
@@ -14,6 +14,7 @@ let catS = [
 function Sort() {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filter.sort);
+  const sortRef = React.useRef();
 
   const [popUp, setPopUp] = React.useState(false);
 
@@ -22,8 +23,16 @@ function Sort() {
     setPopUp(false);
   };
 
+  React.useEffect(() => {
+    document.body.addEventListener('click', (event) => {
+      if (!event.path.includes(sortRef.current)) {
+        setPopUp(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
           width="10"
