@@ -24,11 +24,14 @@ function Sort() {
   };
 
   React.useEffect(() => {
-    document.body.addEventListener('click', (event) => {
+    const handleClickOutside = (event) => {
       if (!event.path.includes(sortRef.current)) {
         setPopUp(false);
       }
-    });
+    };
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => document.body.removeEventListener('click', handleClickOutside);
   }, []);
 
   return (
