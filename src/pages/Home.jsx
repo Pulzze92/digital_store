@@ -14,7 +14,6 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
-import { SearchContext } from '../App';
 import { catS } from '../components/Sort';
 
 import { fetchPizzas, selectPizzaData } from '../redux/slices/pizzasSlice';
@@ -38,7 +37,7 @@ const Home = () => {
   const getPizzas = async () => {
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
     const sortBy = sort.sortProperty.replace('-', '');
-    const categoryFilter = categoryId > 0 ? `category=${categoryId}` : '';
+    const categoryFilter = categoryId > 0 ? `categoryId=${categoryId}` : '';
     const searchByTyping = searchValue ? `&search=${searchValue}` : '';
 
     dispatch(
@@ -99,7 +98,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="content__top">
-        <Categories value={categoryId} onChangeCategory={onChangeCategory} />
+        <Categories categoryId={categoryId} onChangeCategory={onChangeCategory} />
         <Sort />
       </div>
       <h2 className="content__title"> Все пиццы </h2>

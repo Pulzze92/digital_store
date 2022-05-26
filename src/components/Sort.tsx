@@ -2,7 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort, selectSort } from '../redux/slices/filterSlice';
 
-export const catS = [
+type CatSType = {
+  name: string;
+  sortProperty: string;
+};
+
+export const catS: CatSType[] = [
   { name: 'популярности (DESC)', sortProperty: 'rating' },
   { name: 'популярности (ASC)', sortProperty: '-rating' },
   { name: 'цене (DESC)', sortProperty: 'price' },
@@ -14,17 +19,17 @@ export const catS = [
 function Sort() {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
-  const sortRef = React.useRef();
+  const sortRef = React.useRef<HTMLDivElement>(null);
 
   const [popUp, setPopUp] = React.useState(false);
 
-  const catSelect = (obj) => {
+  const catSelect = (obj: CatSType) => {
     dispatch(setSort(obj));
     setPopUp(false);
   };
 
   React.useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: any) => {
       if (!event.path.includes(sortRef.current)) {
         setPopUp(false);
       }
