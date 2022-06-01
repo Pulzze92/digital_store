@@ -1,54 +1,54 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { addItem, selectCartItemById } from '../../redux/slices/cartSlice';
+import { addItem, CartItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
-const typeNames = ['тонкое', 'традиционное'];
+const typeNames = ['темный', 'светлый'];
 
-type PizzaBlockProps = {
+type ProductBlockProps = {
   id: string;
   title: string;
   price: number;
   imageUrl: string;
-  sizes: number[];
   types: number[];
   rating: number;
 };
 
-const PizzaBlock: React.FC<PizzaBlockProps> = ({
+const ProductBlock: React.FC<ProductBlockProps> = ({
   id,
   title,
   price,
   imageUrl,
-  sizes,
   types,
   rating,
 }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
   const [type, setType] = React.useState<number>(0);
-  const [size, setSize] = React.useState<number>(0);
 
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title,
       price,
       imageUrl,
       type: typeNames[type],
-      size: sizes[size],
+      count: 0,
     };
     dispatch(addItem(item));
   };
 
   return (
-    <div className="pizza-block-wrapper">
-      <div className="pizza-block">
-        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
-        <h4 className="pizza-block__title">{title}</h4>
-        <div className="pizza-block__selector">
+    <div className="product-block-wrapper">
+      <div className="product-block">
+        <Link key={id} to={`/Product/${id}`}>
+          <img className="product-block__image" src={imageUrl} alt="Product" />
+          <h4 className="product-block__title">{title}</h4>
+        </Link>
+        <div className="product-block__selector">
           <ul>
             {types.map((el, i) => (
               <li
@@ -61,22 +61,9 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
               </li>
             ))}
           </ul>
-
-          <ul>
-            {sizes.map((el, i) => (
-              <li
-                onClick={() => {
-                  setSize(i);
-                }}
-                className={size === i ? 'active' : ''}
-                key={i}>
-                {el} см.
-              </li>
-            ))}
-          </ul>
         </div>
-        <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} ₽</div>
+        <div className="product-block__bottom">
+          <div className="product-block__price">от {price} ₽</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"
@@ -98,4 +85,4 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   );
 };
 
-export default PizzaBlock;
+export default ProductBlock;

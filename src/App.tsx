@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
-import FullPizza from './pages/FullPizza';
+import { FullProduct } from './pages/FullProduct';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<NotFound />} path="*" />
-          <Route element={<FullPizza />} path="/pizza/:id" />
+          <Route element={<FullProduct />} path="/product/:id" />
           <Route element={<Cart />} path="/cart" />
         </Routes>
       </div>

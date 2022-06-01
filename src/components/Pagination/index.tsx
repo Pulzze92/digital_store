@@ -5,7 +5,7 @@ import styles from './Pagination.module.scss';
 
 type PaginationProps = {
   currentPage: number;
-  onChangePage: any;
+  onChangePage: (page: number) => void;
 };
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, onChangePage }) => {
@@ -17,7 +17,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, onChangePage }) =>
       previousLabel="<"
       onPageChange={(event) => onChangePage(event.selected + 1)}
       pageRangeDisplayed={4}
-      pageCount={3}
+      pageCount={4}
       // renderOnZeroPageCount={1}
     />
   );

@@ -5,6 +5,7 @@
 
 body {
   background-color: $background;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -14,6 +15,7 @@ body {
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
+  box-shadow: 10px 8px 11px 2px rgba(0, 0, 0, 0.336);
 
   @media (max-width: 645px) {
     width: calc(100vw - 30px);
@@ -114,6 +116,93 @@ body {
   }
 }
 
+.main__banner {
+  h1 {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 105.3%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #3c3c3c;
+    position: absolute;
+    top: 33vh;
+    left: 20vw;
+    z-index: 2;
+    @media screen {
+    }
+  }
+
+  h2 {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140.8%;
+    letter-spacing: 0.02em;
+    color: #343434;
+    position: absolute;
+    top: 40vh;
+    left: 20vw;
+    z-index: 2;
+  }
+
+  img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  @media (max-width: 881px) {
+    h1 {
+      font-size: 35px;
+      top: 35vh;
+    }
+  }
+
+  @media (max-width: 715px) {
+    h1 {
+      font-size: 30px;
+      top: 47vh;
+    }
+
+    h2 {
+      font-size: 13px;
+      top: 51vh;
+    }
+  }
+
+  @media (max-width: 646px) {
+    h1 {
+      font-size: 25px;
+      top: 45vh;
+      left: 10vw;
+    }
+
+    h2 {
+      top: 50vh;
+      font-size: 12px;
+      left: 10vw;
+    }
+  }
+
+  @media (max-width: 490px) {
+    h1 {
+      font-size: 25px;
+      top: 40vh;
+      left: 10vw;
+    }
+
+    h2 {
+      top: 44vh;
+      font-size: 12px;
+      left: 10vw;
+    }
+  }
+}
+
 .container {
   width: $container-width;
   margin: 0 auto;
@@ -123,6 +212,9 @@ body {
     margin: 90px auto;
     .content__title {
       margin: 0;
+    }
+    @media (max-width: 884px) {
+      max-height: 50px;
     }
   }
 }
@@ -237,6 +329,26 @@ body {
             display: none;
           }
         }
+
+        &:disabled {
+          opacity: 0.4;
+          border-color: rgba(107, 106, 106, 0.336);
+
+          &:active {
+            transform: none;
+          }
+
+          &:hover {
+            background-color: transparent;
+            svg path {
+              fill: rgba(107, 106, 106, 0.336);
+            }
+          }
+
+          svg path {
+            fill: rgba(107, 106, 106, 0.336);
+          }
+        }
       }
 
       b {
@@ -302,7 +414,7 @@ body {
 
         &:last-of-type {
           b {
-            color: $orange;
+            color: $sky;
           }
         }
       }
@@ -323,8 +435,7 @@ body {
 
         span {
           color: darken($color: $gray-line, $amount: 20);
-          font-weight: 500;
-          font-weight: 600;
+          font-weight: 300;
         }
 
         &:hover {
@@ -356,7 +467,7 @@ body {
 
   &--empty {
     margin: 80px auto;
-    font-weight: 700;
+    font-weight: 400;
     width: 620px;
     text-align: center;
 
@@ -387,7 +498,7 @@ body {
       padding: 12px 0 14px;
       width: 230px;
       margin: 0 auto;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 18px;
     }
   }

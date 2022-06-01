@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import clsx from 'clsx';
 
 import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 
@@ -20,7 +21,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
     dispatch(
       addItem({
         id,
-      }),
+      } as CartItemProps),
     );
   };
 
@@ -37,7 +38,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+        <img className="product-block__image" src={imageUrl} alt="product" />
       </div>
       <div className="cart__item-info">
         <h3>{title}</h3>
@@ -46,9 +47,12 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
         </p>
       </div>
       <div className="cart__item-count">
-        <div
+        <button
+          disabled={count === 1}
           onClick={onClickMinus}
-          className="button button--outline button--circle cart__item-count-minus">
+          className={clsx('button button--outline button--circle cart__item-count-minus', {
+            'cart__item-count-minus--disabled': count === 0,
+          })}>
           <svg
             width="10"
             height="10"
@@ -64,9 +68,9 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
               fill="#EB5A1E"
             />
           </svg>
-        </div>
+        </button>
         <b>{count}</b>
-        <div
+        <button
           onClick={onClickPlus}
           className="button button--outline button--circle cart__item-count-plus">
           <svg
@@ -84,7 +88,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, size, price, count
               fill="#EB5A1E"
             />
           </svg>
-        </div>
+        </button>
       </div>
       <div className="cart__item-price">
         <b>{price * count} ₽</b>

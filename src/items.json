@@ -1,0 +1,160 @@
+[
+  {
+    "id": "0",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/lerhamn-stul-svetlaya-morilka-antik-vittarid-bezhevyy__1082710_pe858789_s5.jpg?f=xl",
+    "title": "Валенсия Beige",
+    "types": [0],
+    "price": 2300,
+    "categoryId": 3,
+    "rating": 4
+  },
+  {
+    "id": "1",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/landskrona-landskruna-taburet-dlya-nog-grann-bumstad-belyy-bereza__0320927_pe514809_s5.jpg?f=s",
+    "imageUrl2": "https://www.ikea.com/ru/ru/images/products/landskrona-landskruna-taburet-dlya-nog-grann-bumstad-chernyy-derevo__0320909_pe514815_s5.jpg?f=s",
+    "title": "Толикс-2 White Gloss",
+    "types": [0, 1],
+    "price": 4690,
+    "categoryId": 3,
+    "rating": 6
+  },
+  {
+    "id": "2",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/aepplaryd-epplaryud-4-mestnyy-divan-s-kozetkoy-leyde-svetlo-seryy__1010450_pe828073_s5.jpg?f=s",
+    "imageUrl2": "https://www.ikea.com/ru/ru/images/products/aepplaryd-epplaryud-4-mestnyy-divan-s-kozetkoy-leyde-seryy-chernyy__1010449_pe828074_s5.jpg?f=s",
+    "title": "Динс Velvet Yellow",
+    "types": [0, 1],
+    "price": 28490,
+    "categoryId": 4,
+    "rating": 4
+  },
+  {
+    "id": "3",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/backabro-bakkabru-divan-krovat-s-kozetkoy-idekulla-siniy__0949856_pe800063_s5.jpg?f=s",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/backabro-bakkabru-divan-krovat-s-kozetkoy-idekulla-bezhevyy__0395735_pe567054_s5.jpg?f=s",
+    "title": "Кускен",
+    "types": [0, 1],
+    "price": 43500,
+    "categoryId": 4,
+    "rating": 2
+  },
+  {
+    "id": "4",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/malm-karkas-krovati-s-4-yashchikami-belyy-leirsund__0638626_pe699044_s5.jpg?f=s",
+    "title": "Шерона Barhat Grey",
+    "types": [1],
+    "price": 59000,
+    "categoryId": 2,
+    "rating": 8
+  },
+  {
+    "id": "16",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/malm-krovat-s-podemnym-mehanizmom-cherno-korichnevyy__0749129_pe745498_s5.jpg?f=s",
+    "title": "Malm",
+    "types": [0],
+    "price": 59000,
+    "categoryId": 2,
+    "rating": 8
+  },
+  {
+    "id": "5",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/havsta-kombinaciya-dlya-hraneniya-s-stkl-dvr-belyy__0720157_pe732451_s5.jpg?f=s",
+    "title": "Авиньон-1",
+    "types": [1],
+    "price": 18990,
+    "categoryId": 1,
+    "rating": 2
+  },
+  {
+    "id": "6",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/hemnes-komod-s-3-yashchikami-cherno-korichnevyy__0152704_pe311015_s5.jpg?f=s",
+    "title": "Стелла Дуб Сонома",
+    "types": [0],
+    "price": 8990,
+    "categoryId": 1,
+    "rating": 9
+  },
+  {
+    "id": "7",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/tyssedal-tissedal-komod-s-4-yashchikami-belyy__0366212_pe429460_s5.jpg?f=s",
+    "title": "Равенна-1 Light",
+    "types": [1],
+    "price": 14990,
+    "categoryId": 1,
+    "rating": 10
+  },
+  {
+    "id": "8",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/kragsta-zhurnalnyy-stol-belyy__0256314_pe400187_s5.jpg?f=s",
+    "title": "Бенфлит Grey",
+    "types": [1],
+    "price": 7290,
+    "categoryId": 5,
+    "rating": 10
+  },
+  {
+    "id": "9",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/vittsjoe-vitshyo-zhurnalnyy-stol-belyy-steklo__0324637_pe517060_s5.jpg?f=s",
+    "title": "Тиффани Вудлайн Крем",
+    "types": [1],
+    "price": 15900,
+    "categoryId": 5,
+    "rating": 7
+  },
+  {
+    "id": "10",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/pax-paks-mehamn-mehamn-garderob-kombinaciya-belyy__1080209_pe857928_s5.jpg?f=s",
+    "title": "Pure Nature",
+    "types": [1],
+    "price": 21590,
+    "categoryId": 1,
+    "rating": 7
+  },
+  {
+    "id": "11",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/opphus-ophus-garderob-s-6-dveryami-belyy-fonnes-belyy__0908347_pe783237_s5.jpg?f=s",
+    "title": "Лайт-3-170-240 Белый",
+    "types": [1],
+    "price": 27290,
+    "categoryId": 1,
+    "rating": 7
+  },
+  {
+    "id": "12",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/vimle-3-mestnyy-divan-s-otkrytym-torcom-grann-bumstad-chernyy__0817381_pe774001_s5.jpg?f=s",
+    "imageUrl2": "https://www.ikea.com/ru/ru/images/products/vimle-3-mestnyy-divan-s-otkrytym-torcom-grann-bumstad-zolotisto-korichnevyy__0817384_pe773998_s5.jpg?f=s",
+    "title": "Вилли",
+    "types": [0, 1],
+    "price": 23990,
+    "categoryId": 4,
+    "rating": 7
+  },
+  {
+    "id": "13",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/friheten-ugl-div-krov-s-otd-d-hran-shiftebu-korichnevyy__0254773_pe397594_s5.jpg?f=s",
+    "imageUrl2": "https://www.ikea.com/ru/ru/images/products/friheten-ugl-div-krov-s-otd-d-hran-shiftebu-bezhevyy__0175606_pe328882_s5.jpg?f=s",
+    "title": "Сан-Паулу Brown",
+    "types": [0],
+    "price": 39900,
+    "categoryId": 4,
+    "rating": 7
+  },
+  {
+    "id": "14",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/vittsjoe-vitshyo-stellazh-cherno-korichnevyy-steklo__0767557_pe754140_s5.jpg?f=s",
+    "title": "Alida",
+    "types": [0],
+    "price": 28500,
+    "categoryId": 1,
+    "rating": 7
+  },
+  {
+    "id": "15",
+    "imageUrl1": "https://www.ikea.com/ru/ru/images/products/kallax-kallaks-stellazh-s-4-vstavkami-belyy__0619476_pe689112_s5.jpg?f=s",
+    "title": "Wayampi",
+    "types": [0],
+    "price": 19900,
+    "categoryId": 1,
+    "rating": 7
+  }
+]
