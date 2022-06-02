@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       }),
     );
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   };
 
   React.useEffect(() => {
