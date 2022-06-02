@@ -14,8 +14,8 @@ function App() {
       <Header />
       <div className="content">
         <Routes>
-          <Route element={<Home />} path="/digital_store" />
-          <Route element={<NotFound />} path="*" />
+          <Route element={<Home />} path="/digital_store/" />
+          <Route element={<NotFound />} path="/*" />
           <Route element={<FullProduct />} path="/product/:id" />
           <Route element={<Cart />} path="/cart" />
         </Routes>

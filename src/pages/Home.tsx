@@ -66,7 +66,7 @@ const Home: React.FC = () => {
 
       const queryString = qs.stringify(params, { skipNulls: true });
 
-      navigate(`/?${queryString}`);
+      navigate(`/digital_store/?${queryString}`);
     }
 
     if (!window.location.search) {

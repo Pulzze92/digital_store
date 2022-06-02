@@ -2,7 +2,7 @@
   "name": "digital-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pulzze92.github.io/digital_store",
+  "homepage": "https://pulzze92.github.io/digital_store/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",

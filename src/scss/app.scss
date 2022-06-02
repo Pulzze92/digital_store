@@ -207,6 +207,9 @@ body {
   width: $container-width;
   margin: 0 auto;
 
+  img {
+    max-width: 500px;
+  }
   &--cart {
     max-width: 820px;
     margin: 90px auto;
