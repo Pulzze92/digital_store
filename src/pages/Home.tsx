@@ -104,7 +104,7 @@ const Home: React.FC = () => {
       <div className="main__banner">
         <h1>loft мебель</h1>
         <h2>Современная и удобная мебель</h2>
-        <img src="/img/1785.png" alt="banner" />
+        <img src="img/1785.png" alt="banner" />
       </div>
       <div className="container">
         <div className="content__top">
