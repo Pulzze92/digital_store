@@ -8,7 +8,7 @@ export type CartItem = {
   title: string;
   price: number;
   imageUrl: string;
-  type: string;
+  // type: string;
   count: number;
 };
 

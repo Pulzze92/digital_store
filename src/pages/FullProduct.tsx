@@ -5,6 +5,7 @@ import axios from 'axios';
 export const FullProduct: React.FC = () => {
   const [product, setProduct] = React.useState<{
     imageUrl: string;
+    imageUrl2: string;
     title: string;
     price: number;
   }>();

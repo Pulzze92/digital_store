@@ -10,7 +10,7 @@ body {
 
 .wrapper {
   width: calc(100vw - 100px);
-  height: 100%;
+  height: calc(100%);
   background-color: #fff;
   margin: 50px auto;
   border-radius: 10px;

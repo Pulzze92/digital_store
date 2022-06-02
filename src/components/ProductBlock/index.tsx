@@ -11,18 +11,11 @@ type ProductBlockProps = {
   title: string;
   price: number;
   imageUrl: string;
-  types: number[];
+  // types: number[];
   rating: number;
 };
 
-const ProductBlock: React.FC<ProductBlockProps> = ({
-  id,
-  title,
-  price,
-  imageUrl,
-  types,
-  rating,
-}) => {
+const ProductBlock: React.FC<ProductBlockProps> = ({ id, title, price, imageUrl, rating }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
   const [type, setType] = React.useState<number>(0);
@@ -35,7 +28,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
       title,
       price,
       imageUrl,
-      type: typeNames[type],
+      // type: typeNames[type],
       count: 0,
     };
     dispatch(addItem(item));
@@ -48,20 +41,6 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
           <img className="product-block__image" src={imageUrl} alt="Product" />
           <h4 className="product-block__title">{title}</h4>
         </Link>
-        <div className="product-block__selector">
-          <ul>
-            {types.map((el, i) => (
-              <li
-                key={i}
-                onClick={() => {
-                  setType(el);
-                }}
-                className={type === i ? 'active' : ''}>
-                {typeNames[el]}
-              </li>
-            ))}
-          </ul>
-        </div>
         <div className="product-block__bottom">
           <div className="product-block__price">от {price} ₽</div>
           <button onClick={onClickAdd} className="button button--outline button--add">

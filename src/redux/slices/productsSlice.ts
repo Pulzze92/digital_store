@@ -9,6 +9,7 @@ type Product = {
   title: string;
   price: number;
   imageUrl: string;
+  imageUrl2: string;
   types: number[];
   rating: number;
 };
