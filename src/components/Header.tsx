@@ -22,7 +22,7 @@ function Header() {
   return (
     <div className="header">
       <div className="container">
-        <Link to="/">
+        <Link to="/digital_store">
           <div className="header__logo">
             <svg
               width="113"
